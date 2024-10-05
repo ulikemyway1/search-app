@@ -18,11 +18,12 @@ const InitialPlaceholder = () => {
       <strong>
         Developed by
         <br />
-        Alexander Potapchik
+        Alexander&nbsp;Potapchik
       </strong>
       <p>
         <a href="https://github.com/ulikemyway1">
-          GitHub <FaGithub />
+          GitHub&nbsp;
+          <FaGithub />
         </a>{" "}
       </p>
       <div className="line"></div>
