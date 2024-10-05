@@ -1,20 +1,37 @@
 .initial-placeholder {
 
     &__container {
+        padding-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
         width: 100%;
         font-size: 20px;
         text-align: center;
         line-height: 30px;
+        background: url('./bg.svg');
+        background-repeat: no-repeat;
+        background-position: center;
          p {
             padding: 0 20px;
          }
+
+         .line {
+            height: 1px;
+            width: 100%;
+            background-color: var(--accent-light-fade);
+        }
     }
+
+  
 }
 
 @media screen and (max-width: 430px) {
     .initial-placeholder__container {
         font-size: 16px;
-        line-height: 18px;
+        line-height: 22px;
     }
     
 }

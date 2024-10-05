@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+:root {
+  --dark-bg: #1f1f1f;
+  --light-bg: #f3f7ff;
+  --border-color-dark: #696969;
+  --search-btn-light: rgb(87, 124, 155);
+  --accent-light: rgb(127, 182, 226);
+  --accent-light-fade: rgba(127, 181, 226, 0.146);
+  --red: #f26a6a;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,13 +17,14 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Titillium Web", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  background-color: var(--light-bg);
 
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 6px;
   }
 
   ::-webkit-scrollbar-track {
@@ -20,6 +33,7 @@ body {
 
   ::-webkit-scrollbar-thumb {
     background: var(--accent-light);
+    border-radius: 3px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
@@ -33,6 +47,7 @@ a {
   color: inherit;
   padding: 5px 10px;
   overflow-x: hidden;
+  z-index: 100;
 
   &::after {
     content: '';
@@ -56,19 +71,11 @@ a {
     left: -106%;
     width: 105%;
     height: 110%;
-    background-color: #ffffff;
+    background-color: var(--light-bg);
     z-index: -1;
   }
 }
 
-:root {
-  --dark-bg: #1f1f1f;
-  --border-color-dark: #696969;
-  --search-btn-light: rgb(87, 124, 155);
-  --accent-light: rgb(127, 182, 226);
-  --accent-light-fade: rgba(127, 181, 226, 0.146);
-  --red: #f26a6a;
-}
 
 .btn {
   padding: 10px 15px;
@@ -86,6 +93,7 @@ a {
   a:hover::after {
     left: 0;
     opacity: 1;
+    z-index: -1;
   }
 }
 
@@ -93,7 +101,8 @@ a {
   margin: 0 auto;
   padding: 40px;
   max-width: 1440px;
-  background-color: #ffffff;
+  min-height: 100dvh;
+background-color: var(--light-bg)
 }
 
 .spiner {
@@ -121,6 +130,12 @@ a {
   height: 100dvh;
   z-index: 0;
   background-color: #000000b8;
+}
+
+@media screen and (max-width: 500px) {
+  a::after, a::before {
+    content: none;
+  }
 }
 
 @media screen and (max-width: 400px) {

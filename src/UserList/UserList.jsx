@@ -89,7 +89,9 @@ const View = ({ users, setShow, setSelectedUser }) => {
 const UserListPlaceholder = () => {
   return (
     <div className="user-list__placeholder">
-      <h2>Users not found...</h2>
+      <h2>
+        <mark>Users not found...</mark>
+      </h2>
     </div>
   );
 };
