@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import Spinner from "../UIKit/Spinner";
 import "./userList.scss";
 import findUser from "./findUser";
+import UserListItem from "./UserListItem";
+import { v4 as uuidv4 } from "uuid";
 
-const UserList = ({ users, targetName }) => {
+const UserList = ({ users, targetName, setShow, setSelectedUser }) => {
   const [loading, setLoading] = useState(true);
   const [filteredUsers, setFilteredUsers] = useState([]);
 
@@ -18,7 +19,13 @@ const UserList = ({ users, targetName }) => {
   }
 
   const userListTable =
-    filteredUsers.length > 0 ? <View users={filteredUsers} /> : null;
+    filteredUsers.length > 0 ? (
+      <View
+        users={filteredUsers}
+        setShow={setShow}
+        setSelectedUser={setSelectedUser}
+      />
+    ) : null;
   const spinner = loading ? <Spinner /> : null;
   const placeholder =
     filteredUsers.length === 0 && targetName.length > 0 ? (
@@ -36,7 +43,18 @@ const UserList = ({ users, targetName }) => {
 
 export default UserList;
 
-const View = ({ users }) => {
+const View = ({ users, setShow, setSelectedUser }) => {
+  const userList = [];
+  users.forEach((user) => {
+    userList.push(
+      <UserListItem
+        key={user.id || uuidv4()}
+        user={user}
+        setShow={setShow}
+        setSelectedUser={setSelectedUser}
+      />,
+    );
+  });
   return (
     <table className="user-list__wrapper">
       <thead>
@@ -48,22 +66,7 @@ const View = ({ users }) => {
           <th className="table-header">Country</th>
         </tr>
       </thead>
-      <tbody>
-        {users.map((user) => (
-          <tr key={user.id || uuidv4()} className="table-row">
-            <td className="table-row__content">
-              <img
-                src={user.avatar_thumbnail}
-                alt={`Photo of ${user.firstName}`}
-              />
-            </td>
-            <td className="table-row__content">{user.firstName}</td>
-            <td className="table-row__content">{user.lastName}</td>
-            <td className="table-row__content">{user.age}</td>
-            <td className="table-row__content">{user.country}</td>
-          </tr>
-        ))}
-      </tbody>
+      <tbody>{userList}</tbody>
     </table>
   );
 };

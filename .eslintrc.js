@@ -4,6 +4,7 @@ module.exports = {
     es2021: true,
   },
   extends: ["eslint:recommended", "plugin:react/recommended"],
+  ignorePatterns: ["**/__tests__/*", "**/*.test.js"],
   overrides: [
     {
       env: {
@@ -20,5 +21,7 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react"],
-  rules: {},
+  rules: {
+    "react/prop-types": "off",
+  },
 };

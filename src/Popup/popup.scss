@@ -1,0 +1,29 @@
+.popup {
+    padding: 5px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border: 1px solid var(--border-color-dark);
+    border-radius: 6px;
+    filter: drop-shadow(0 0 3px var(--border-color-dark));
+    min-height: 240px;
+    min-width: 240px;
+    width: max-content;
+    background-color: #ffffff;
+
+    &__header {
+       display: flex;
+       justify-content: end;
+    }
+
+    &__close-btn {
+        background-color: var(--red);
+        color: #ffffff;
+        font-size: 20px;
+    }
+
+    &__body {
+        padding: 10px;
+    }
+}

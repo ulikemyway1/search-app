@@ -1,0 +1,40 @@
+.user {
+
+    &__title {
+        position: relative;
+        color: var(--accent-light);
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            bottom: -3px;
+            background-color: var(--accent-light-fade);
+
+        }
+    }
+
+    &__avatar {
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        .contacts {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            a {
+                &::after, &::before {
+                    content: none;
+                }
+            }
+        }
+    }
+ 
+}
