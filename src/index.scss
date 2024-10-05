@@ -112,3 +112,19 @@ a {
     height: 100px;
   }
 }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  z-index: 0;
+  background-color: #000000b8;
+}
+
+@media screen and (max-width: 400px) {
+  .app {
+    padding: 10px;
+  }
+}

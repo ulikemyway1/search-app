@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaSearch } from "react-icons/fa";
 import "./userSearch.scss";
 
 const UserSearch = ({ setTargetUser }) => {
@@ -26,6 +27,9 @@ const UserSearch = ({ setTargetUser }) => {
       ></input>
       <button className="btn user-search__btn" onClick={onClick}>
         Search
+        <span>
+          <FaSearch />
+        </span>
       </button>
     </div>
   );

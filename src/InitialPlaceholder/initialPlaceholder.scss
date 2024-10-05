@@ -2,10 +2,6 @@
 
     &__container {
         width: 100%;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%);
         font-size: 20px;
         text-align: center;
         line-height: 30px;
@@ -13,4 +9,12 @@
             padding: 0 20px;
          }
     }
+}
+
+@media screen and (max-width: 430px) {
+    .initial-placeholder__container {
+        font-size: 16px;
+        line-height: 18px;
+    }
+    
 }

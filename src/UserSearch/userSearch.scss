@@ -23,8 +23,23 @@
     }
 
     &__btn {
+        display: flex;
+        gap: 6px;
+        align-items: center;
         color: #ffffff;
         font-weight: 800;
         background-color: var(--search-btn-light);
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .user-search__btn {
+        padding: 5px 10px;
+        display: block;
+        font-size: 0;
+
+        span {
+            font-size: 18px;
+        }
     }
 }

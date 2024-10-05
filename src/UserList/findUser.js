@@ -1,8 +1,5 @@
 export default function findUser(targetName, array) {
-  if (!targetName) {
-    return [];
-  }
-  if (!Array.isArray(array)) {
+  if (!targetName || !Array.isArray(array) || targetName.length < 2) {
     return [];
   }
 

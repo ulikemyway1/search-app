@@ -9,7 +9,11 @@ const UserListItem = ({ user, setShow, setSelectedUser }) => {
   return (
     <tr key={user.id || uuidv4()} className="table-row" onClick={handleClick}>
       <td className="table-row__content">
-        <img src={user.avatar_thumbnail} alt={`Photo of ${user.firstName}`} />
+        <img
+          className="user-list__photo"
+          src={user.avatar_thumbnail}
+          alt={`Photo of ${user.firstName}`}
+        />
       </td>
       <td className="table-row__content">{user.firstName}</td>
       <td className="table-row__content">{user.lastName}</td>

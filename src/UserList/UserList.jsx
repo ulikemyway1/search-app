@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import Spinner from "../UIKit/Spinner";
 import "./userList.scss";
 import findUser from "./findUser";
@@ -28,12 +29,20 @@ const UserList = ({ users, targetName, setShow, setSelectedUser }) => {
     ) : null;
   const spinner = loading ? <Spinner /> : null;
   const placeholder =
-    filteredUsers.length === 0 && targetName.length > 0 ? (
+    filteredUsers.length === 0 && targetName.length > 2 ? (
       <UserListPlaceholder />
     ) : null;
 
   return (
-    <div className="user-list__container">
+    <div
+      className="user-list__container"
+      style={{
+        display:
+          !loading && filteredUsers.length === 0 && targetName.length < 2
+            ? "none"
+            : "block",
+      }}
+    >
       {spinner}
       {placeholder}
       {userListTable}
@@ -56,18 +65,24 @@ const View = ({ users, setShow, setSelectedUser }) => {
     );
   });
   return (
-    <table className="user-list__wrapper">
-      <thead>
-        <tr>
-          <th className="table-header">Photo</th>
-          <th className="table-header">First Name</th>
-          <th className="table-header">Last Name</th>
-          <th className="table-header">Age</th>
-          <th className="table-header">Country</th>
-        </tr>
-      </thead>
-      <tbody>{userList}</tbody>
-    </table>
+    <>
+      <table className="user-list__wrapper">
+        <thead>
+          <tr>
+            <th className="table-header">Photo</th>
+            <th className="table-header">First Name</th>
+            <th className="table-header">Last Name</th>
+            <th className="table-header">Age</th>
+            <th className="table-header">Country</th>
+          </tr>
+        </thead>
+        <tbody>{userList}</tbody>
+      </table>
+      {createPortal(
+        <p className="user-list__statistics">Found {users.length} users</p>,
+        document.querySelector(".app"),
+      )}
+    </>
   );
 };
 

@@ -18,9 +18,11 @@
     }
 
     &__close-btn {
+        padding: 4px 8px;
         background-color: var(--red);
         color: #ffffff;
         font-size: 20px;
+        line-height: 20px;
     }
 
     &__body {

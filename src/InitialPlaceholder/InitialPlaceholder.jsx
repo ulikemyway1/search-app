@@ -1,5 +1,6 @@
 import React from "react";
 import "./initialPlaceholder.scss";
+import { FaGithub } from "react-icons/fa";
 
 const InitialPlaceholder = () => {
   return (
@@ -9,9 +10,15 @@ const InitialPlaceholder = () => {
       </p>
       <p>Just enter the first or last name of the user you want to find.</p>
       <br />
-      <strong>Developed by Alexander Potapchik</strong>
+      <strong>
+        Developed by
+        <br />
+        Alexander Potapchik
+      </strong>
       <p>
-        <a href="https://github.com/ulikemyway1">GitHub</a>{" "}
+        <a href="https://github.com/ulikemyway1">
+          GitHub <FaGithub />
+        </a>{" "}
       </p>
       <br />
       <p>
