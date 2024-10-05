@@ -1,0 +1,55 @@
+.user-list {
+
+    &__container {
+        width: 100%;
+        height: 70dvh;
+        max-height: 70dvh;
+        overflow-y: auto;
+        background-color: #ffffff;
+        background-clip: content-box;
+    }
+
+    &__placeholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 500px;
+        text-align: center;
+    }
+
+    &__wrapper {
+        width: 100%;
+        text-align: center;
+        position: relative;
+
+        tbody {
+            height: 100%;
+        }
+
+        thead {
+            background-color: var(--accent-light);
+            position: sticky;
+            top: 0;
+        }
+         
+        .table-row__content, .table-header {
+            padding: 10px 0;
+        }
+
+        .table-header {
+            background-color: var(--accent-light);
+        }
+
+        .table-row {
+            cursor: pointer;
+            transition: background-color 0.4s ease-in-out;
+        }
+        
+    }
+}
+
+@media screen and (hover:hover) and (pointer: fine) {
+    .user-list__wrapper .table-row:hover {
+        background-color: var(--accent-light-fade);
+    }
+}

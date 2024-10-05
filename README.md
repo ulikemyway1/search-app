@@ -1,1 +1,1 @@
-# search-app
+# Welcome to User Search application!

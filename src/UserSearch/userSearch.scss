@@ -1,0 +1,30 @@
+.user-search {
+
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        width: 100%;
+        background-color: #ffffff;
+        margin-bottom: 20px;
+    }
+
+    &__input {
+        padding: 10px 15px;
+        border: 1px solid var(--accent-light);
+        border-radius: 6px;
+        flex-grow: 1;
+        transition: filter 0.2s ease-in;
+        filter: drop-shadow(0 0 0 var(--accent-light));
+        &:focus {
+            outline: 1px solid  var(--accent-light);
+            filter: drop-shadow(0 0 4px var(--accent-light));
+        }
+    }
+
+    &__btn {
+        color: #ffffff;
+        font-weight: 800;
+        background-color: var(--search-btn-light);
+    }
+}
