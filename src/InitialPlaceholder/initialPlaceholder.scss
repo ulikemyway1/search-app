@@ -13,7 +13,11 @@
         line-height: 30px;
         background: url('./bg.svg');
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: center 0;
+        animation-name: bg-move;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
          p {
             padding: 0 20px;
          }
@@ -22,6 +26,12 @@
             height: 1px;
             width: 100%;
             background-color: var(--accent-light-fade);
+        }
+
+        p span {
+            position: relative;
+            color: black;
+            z-index: 1000;
         }
     }
 
@@ -34,4 +44,19 @@
         line-height: 22px;
     }
     
+}
+
+@keyframes bg-move {
+    0% {
+        background-position: center 0
+        ba
+    }
+ 
+    50% {
+        background-position: center 5px
+    }
+
+    100%{
+        background-position: center 0
+    }
 }

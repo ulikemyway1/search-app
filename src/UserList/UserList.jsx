@@ -79,7 +79,12 @@ const View = ({ users, setShow, setSelectedUser }) => {
         <tbody>{userList}</tbody>
       </table>
       {createPortal(
-        <p className="user-list__statistics">Found {users.length} users</p>,
+        <p className="user-list__statistics">
+          Found{" "}
+          {users.length > 1
+            ? `${users.length} people`
+            : `${users.length} person`}
+        </p>,
         document.querySelector(".app"),
       )}
     </>

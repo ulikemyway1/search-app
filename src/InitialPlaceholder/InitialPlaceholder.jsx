@@ -24,13 +24,13 @@ const InitialPlaceholder = () => {
         <a href="https://github.com/ulikemyway1">
           GitHub&nbsp;
           <FaGithub />
-        </a>{" "}
+        </a>
       </p>
       <div className="line"></div>
       <br />
 
       <p>
-        API:{" "}
+        <span>API:</span>
         <a href="https://randomuser.me/" target="__blank">
           randomuser.me
         </a>
